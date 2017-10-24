@@ -1,9 +1,12 @@
-public class InvestmentAccount extends Account {
+package accounts;
+
+public class SavingsAccount extends Account {
 
     {
-        interest = 4.0;
-        balance = 0d;
+        interest = 2.00;
+        balance = 0.0;
     }
+
 
     @Override
     public double checkBalance() {
@@ -14,4 +17,5 @@ public class InvestmentAccount extends Account {
     public void modifyBalance(double money) {
         balance += money;
     }
+
 }

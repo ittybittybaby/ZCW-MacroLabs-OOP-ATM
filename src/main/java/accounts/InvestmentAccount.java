@@ -1,8 +1,13 @@
-public class CheckingAccount extends Account {
+package accounts;
+
+import java.util.UUID;
+
+public class InvestmentAccount extends Account {
 
     {
-        interest = 0.5;
+        interest = 4.0;
         balance = 0d;
+        accountNumber = UUID.randomUUID().toString();
     }
 
     @Override
@@ -14,5 +19,4 @@ public class CheckingAccount extends Account {
     public void modifyBalance(double money) {
         balance += money;
     }
-
 }

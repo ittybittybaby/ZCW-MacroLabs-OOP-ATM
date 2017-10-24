@@ -1,14 +1,44 @@
+package users;
+
+
+import accounts.CheckingAccount;
+import accounts.SavingsAccount;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 public class TestUser {
     User user= new User();
     SavingsAccount savings = new SavingsAccount();
+    CheckingAccount checking = new CheckingAccount();
+
+    // Account Actions (Add, Remove)
+    @Test
+    public void testAddAccount() {
+        user.addAccount(checking);
+
+        int expected = 1;
+
+        int actual = user.getNumberOfAccounts();
+
+        Assert.assertEquals(expected, actual);
+    }
 
     @Test
-    public void testSetPassword() {
+    public void testDeleteAccount() {
+        user.addAccount(savings);
+        user.addAccount(checking);
+        user.deleteAccount(savings);
 
+        int expected = 1;
+
+        int actual = user.getNumberOfAccounts();
+
+        Assert.assertEquals(expected, actual);
     }
+
+    // User Actions On Account (Deposit, Withdraw, Transfer)
 
     @Test
     public void testDepositFunds() {
@@ -23,7 +53,7 @@ public class TestUser {
 
     @Test
     public void testWithdrawFunds_Pass() {
-        savings.balance = 999.00;
+        user.depositFunds(999, savings);
 
         double expected = 100.00;
 
