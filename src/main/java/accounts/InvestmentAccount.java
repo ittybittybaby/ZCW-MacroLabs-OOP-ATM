@@ -1,13 +1,10 @@
 package accounts;
 
-import java.util.UUID;
-
 public class InvestmentAccount extends Account {
 
     {
         interest = 4.0;
         balance = 0d;
-        accountNumber = UUID.randomUUID().toString();
     }
 
     @Override

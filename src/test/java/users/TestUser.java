@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class TestUser {
     User user= new User();
+
     SavingsAccount savings = new SavingsAccount();
     CheckingAccount checking = new CheckingAccount();
 
