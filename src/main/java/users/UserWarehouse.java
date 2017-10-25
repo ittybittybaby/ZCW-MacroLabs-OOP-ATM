@@ -11,6 +11,10 @@ public class UserWarehouse {
     public void addUser(User user) {
         users.add(user);
         user.setUserId(users.size());
+        /* // Leading zeroes get deleted on conversion from string to numeric.
+        String formatter = Integer.toString(users.size());
+        user.setUserId( (String.format("%08d", formatter)) );
+        */
     }
 
     public void removeUser(User user) {

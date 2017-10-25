@@ -31,7 +31,6 @@ public class TestTransactions {
         //output = null; // Uncomment to fail
 
         Assert.assertEquals(expected, output);
-        //Assert.assertNotNull(output);
     }
 
 
