@@ -14,7 +14,63 @@ public class TestUser {
     SavingsAccount savings = new SavingsAccount();
     CheckingAccount checking = new CheckingAccount();
 
-    // Account Actions (Add, Remove)
+    // == User variable interactions ==
+
+    @Test
+    public void testSetUserName() {
+        user.setUserName("Test");
+
+        String expected = "Test";
+
+        String actual = user.getUserName();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetUserName() {
+        user.setUserName("Test");
+
+        String expected = "Test";
+
+        String actual = user.getUserName();
+    }
+
+    @Test
+    public void testSetUserPassword() {
+        user.setPassword("1234");
+
+        String expected = "1234";
+
+        String actual = user.getPassword();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetUserPassword() {
+        user.setPassword("123");
+
+        String expected = "123";
+
+        String actual = user.getPassword();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetUserId() {
+        user.setUserId(1);
+
+        long expected = 1;
+
+        long actual = user.getUserId();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    // == Account Actions (Add, Remove) ==
+
     @Test
     public void testAddAccount() {
         user.addAccount(checking);
@@ -39,7 +95,19 @@ public class TestUser {
         Assert.assertEquals(expected, actual);
     }
 
-    // User Actions On Account (Deposit, Withdraw, Transfer)
+    @Test
+    public void testGetNumberOfAccounts() {
+        user.addAccount(checking);
+        user.addAccount(savings);
+
+        int expected = 2;
+
+        int actual = user.getNumberOfAccounts();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    // == User Actions On Account (Deposit, Withdraw, Transfer) ==
 
     @Test
     public void testDepositFunds() {

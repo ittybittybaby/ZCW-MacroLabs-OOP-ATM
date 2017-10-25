@@ -1,12 +1,22 @@
 package accounts;
 
-public abstract class Account {
+public class Account {
 
-    protected double interest;
-    protected double balance;
+    double interest;
+    double balance;
 
-    abstract public double checkBalance();
+    public Account() {
+        //this.interest = interest;
+        //this.balance = balance;
+    }
 
-    abstract public void modifyBalance(double money);
+
+    public double checkBalance() {
+        return balance;
+    }
+
+    public void modifyBalance(double money) {
+        balance += money;
+    };
 
 }

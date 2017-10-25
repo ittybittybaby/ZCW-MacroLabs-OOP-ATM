@@ -6,6 +6,7 @@ import org.junit.Test;
 public class TestUserWarehouse {
 
     UserWarehouse users = new UserWarehouse();
+    UserFactory factory = new UserFactory();
     User user = new User();
 
     @Test
@@ -31,6 +32,19 @@ public class TestUserWarehouse {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testFindUser() {
+        users.addUser(factory.generateUser("bob", "12345"));
+        users.addUser(factory.generateUser("robert", "12345"));
+
+        User expected = users.getUserAtIndex(0);
+
+        User actual = users.findUser(1, "12345");
+
+        Assert.assertEquals(expected, actual);
+    }
+
 
 
 

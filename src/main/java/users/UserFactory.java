@@ -2,15 +2,14 @@ package users;
 
 public class UserFactory {
 
-    public User UserFactory(long userId, String password) {
+    public UserFactory() {}
 
+    public User generateUser(String name, String password) {
         User user = new User();
-
+        user.setUserName(name);
         user.setPassword(password);
-        //user.setUserId();
         return user;
-
-
+    }
 
 
 
@@ -21,5 +20,5 @@ public class UserFactory {
             User user = new User();
         }
         */
-    }
+
 }

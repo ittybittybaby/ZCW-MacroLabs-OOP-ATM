@@ -7,19 +7,24 @@ import java.util.ArrayList;
 public class User {
 
     private long userId;
+    private String name;
     private String password;
     private ArrayList accounts = new ArrayList();
     private ArrayList transactions = new ArrayList();
 
     public User() {}
 
-    protected void setPassword(String password) {
-        this.password = password;
-    }
+    protected void setUserName(String name) {this.name = name;}
 
-    protected void setUserId(long userId) {
-        this.userId = userId;
-    }
+    protected void setPassword(String password) {this.password = password;}
+
+    protected void setUserId(long userId) {this.userId = userId;}
+
+    protected String getUserName() {return this.name;}
+
+    protected String getPassword() {return this.password;}
+
+    protected long getUserId() {return this.userId;};
 
     protected void addAccount(Account account) {
         accounts.add(account);

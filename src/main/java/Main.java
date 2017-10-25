@@ -19,18 +19,19 @@ public class Main {
         int numericInput = keyboard.nextInt();
         String stringInput;
 
-        if(numericInput == 1) {
-            console.logIn();
-            stringInput = keyboard.nextLine();
+        switch (numericInput) {
+            case 1:
+                console.logIn();
 
+                //switch ()
+                break;
+            case 2:
+                console.newUser();
+                break;
+            default:
+                System.out.println("Invalid input. Please try again.");
+        }
 
-        }
-        else if (numericInput == 2) {
-            console.newUser();
-        }
-        else {
-            System.out.println("Invalid input. Please try again.");
-        }
 
 
 

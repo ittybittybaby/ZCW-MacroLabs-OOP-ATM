@@ -8,14 +8,5 @@ public class SavingsAccount extends Account {
     }
 
 
-    @Override
-    public double checkBalance() {
-        return this.balance;
-    }
-
-    @Override
-    public void modifyBalance(double money) {
-        balance += money;
-    }
 
 }
