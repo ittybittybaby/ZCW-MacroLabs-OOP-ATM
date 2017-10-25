@@ -11,9 +11,6 @@ public class UserFactory {
         return user;
     }
 
-
-
-
         /* // Move logic to try catch in main
         if(username != null && username != "" &&
                 password != null && password != "") {

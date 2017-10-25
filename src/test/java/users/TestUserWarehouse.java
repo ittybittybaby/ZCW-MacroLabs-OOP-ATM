@@ -16,7 +16,7 @@ public class TestUserWarehouse {
 
         int expected = 1;
 
-        int actual = users.getTotalUsersNumber();
+        int actual = users.countUsers();
 
         Assert.assertEquals(expected, actual);
     }
@@ -28,7 +28,7 @@ public class TestUserWarehouse {
 
         int expected = 0;
 
-        int actual = users.getTotalUsersNumber();
+        int actual = users.countUsers();
 
         Assert.assertEquals(expected, actual);
     }
@@ -45,7 +45,33 @@ public class TestUserWarehouse {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testCountUsers() {
+        users.addUser(user);
 
+        int expected = 1;
 
+        int actual = users.countUsers();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetUserAtIndex() {
+        users.addUser(user);
+
+        User expected = user;
+
+        User actual = users.getUserAtIndex(0);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void isInWarehouse() {
+        users.addUser(user);
+
+        Assert.assertTrue(users.isInWarehouse(user));
+    }
 
 }

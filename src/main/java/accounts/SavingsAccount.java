@@ -2,11 +2,7 @@ package accounts;
 
 public class SavingsAccount extends Account {
 
-    {
-        interest = 2.00;
-        balance = 0.0;
+public SavingsAccount() {
+    super(2.0, 0.0);
     }
-
-
-
 }

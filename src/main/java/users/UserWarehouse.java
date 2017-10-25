@@ -17,10 +17,6 @@ public class UserWarehouse {
         users.remove(user);
     }
 
-    public int getTotalUsersNumber() {
-        return users.size();
-    }
-
     public User findUser(long userId, String password) {
         User match = null;
         for(User user : users) {
@@ -31,8 +27,16 @@ public class UserWarehouse {
         return match;
     };
 
+    public int countUsers() {
+        return users.size();
+    }
+
     public User getUserAtIndex(int i) {
         return users.get(i);
+    }
+
+    public boolean isInWarehouse(User user) {
+        return users.contains(user);
     }
 
 }

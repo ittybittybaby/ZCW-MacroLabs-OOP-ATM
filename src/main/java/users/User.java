@@ -40,14 +40,14 @@ public class User {
     }
 
     public void depositFunds(double money, Account accountTo) {
-        String transactionType = "deposit";
+        String transactionType = "Deposit";
         accountTo.modifyBalance(money);
         Transaction transaction = new Transaction(money, accountTo, transactionType);
         transactions.add(transaction);
     }
 
     public void withdrawFunds(double money, Account accountFrom) {
-        String transactionType = "withdraw";
+        String transactionType = "Withdraw";
         if(accountFrom.checkBalance() - money <= 0) {
             System.out.println("** Insufficient Funds **");
         }
@@ -69,6 +69,16 @@ public class User {
         else {
             System.out.println("** Unable to process transaction **");
         }
+    }
+
+    public void sendFunds(double money, User sender, Account sendAccount, User receiver, Account receiveAccount) {
+        if(sendAccount.checkBalance() - money >= 0) {
+
+        }
+    }
+
+    public ArrayList getAllTransactions() {
+        return this.transactions;
     }
 
     protected int getNumberOfAccounts() {

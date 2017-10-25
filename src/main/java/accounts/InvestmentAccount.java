@@ -2,9 +2,7 @@ package accounts;
 
 public class InvestmentAccount extends Account {
 
-    {
-        interest = 4.0;
-        balance = 0d;
+    public InvestmentAccount() {
+        super(4.0d, 0d);
     }
-
 }
